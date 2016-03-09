@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1 here's all those cats you asked for
+  li: a(href='/cats') home
+  li: a(href='/cats/new') add a new cat why doncha
+
+  if cats
+    for c in cats
+      h3 
+        a(href="/cats/#{c._id}") #{c.name}
+      li Age: #{c.age}
+      li Bio: #{c.status}
+      li 
+        a(href="/cats/#{c._id}/edit") edit
+      li
+        form(action='/cats/#{c._id}/delete' method='POST')
+          button(type='submit') delete

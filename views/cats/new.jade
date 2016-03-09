@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h1= title
+  form(action="/cats" method="POST")
+    p name:
+    input(name="name")
+
+    p age:
+    input(name="age")
+
+    p status:
+    input(name="status")
+
+    p: button(type="submit") go

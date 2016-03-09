@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h1= title
+  form(action="/cats/#{cat._id}" method="POST")
+    p name:
+    input(name="name" value="#{cat.name}") 
+
+    p age:
+    input(name="age" value="#{cat.age}") 
+
+    p status:
+    input(name="status" value="#{cat.status}") 
+
+    p: button(type="submit") go
